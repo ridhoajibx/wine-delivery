@@ -1,38 +1,83 @@
-.App {
-  text-align: center;
+.navbar-brand {
+    font-size: 14px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.form-search {
+    width: 100%;
+    border-color: #a3a7a7;
+    background-color: #dddfdf;
+    color: white;
+    overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.form-search:focus {
+    border-color: #a3a7a7;
+    background-color: #dddfdf;
+    color: white;
+    overflow: hidden;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.font-sm {
+    font-size: 14px;
 }
 
-.App-link {
-  color: #61dafb;
+.font-lg {
+    font-size: 24px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.text-cream {
+    color: #9e7540 !important;
+}
+
+.bg-cream {
+    background-color: #9e7540 !important;
+}
+
+.t-0 {
+    top: 0 !important;
+}
+
+.l-0 {
+    left: 0 !important;
+}
+
+.r-0 {
+    right: 0 !important;
+}
+
+@media screen and (min-width: 1000px) {
+    .form-search {
+        width: 220%;
+    }
+    .r-0 {
+        right: -260px !important;
+    }
+}
+
+/* Card Style */
+.card-title {
+    font-size: 20px;
+}
+.card-text {
+    font-size: 16px;
+}
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* button style */
+
+.btn-cream {
+    background-color: #9e7540;
+    border-color: #9e7540;
+    color: white;
+    text-transform: uppercase;
+}
+.btn-cream:hover {
+    background-color: #8a693e;
+    border-color: #8a693e;
+    color: white;
 }
