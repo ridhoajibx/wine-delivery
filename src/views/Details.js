@@ -1,21 +1,11 @@
-import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
-import axios from 'axios';
-import App from '../layouts/App'
 import { Breadcrumb } from 'react-bootstrap';
+import useProduct from '../customHooks/useProduct';
+import App from '../layouts/App'
 
 export default function Details() {
     const { identifier } = useParams();
-    const [product, setProduct] = useState([]);
-
-    useEffect(() => {
-        const getProduct = async () => {
-            const { data } = await axios.get(`https://zax5j10412.execute-api.ap-southeast-1.amazonaws.com/dev/api/product/${identifier}`)
-            console.log(data)
-            setProduct(data.value);
-        }
-        getProduct()
-    }, [identifier])
+    const { product } = useProduct(identifier)
 
     return (
         <App title={product.name}>

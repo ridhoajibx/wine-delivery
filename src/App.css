@@ -77,7 +77,10 @@
 }
 
 /* button style */
-
+button:focus:not(:focus-visible) {
+    outline: 0;
+    box-shadow: none;
+}
 .btn-cream {
     background-color: #9e7540;
     border-color: #9e7540;
@@ -89,6 +92,12 @@
     background-color: #8a693e;
     border-color: #8a693e;
     color: white;
+}
+
+.btn-icons, .btn-icons:hover {
+    font-weight: 400;
+    color: #ffffff;
+    text-decoration: none;
 }
 
 /* Breadcumb */

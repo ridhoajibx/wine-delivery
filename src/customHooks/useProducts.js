@@ -11,7 +11,7 @@ function useProducts(page) {
             setLoading(true);
             try {
                 const { data } = await axios.get(`https://zax5j10412.execute-api.ap-southeast-1.amazonaws.com/dev/api/product/list?page=${page}`)
-                setProducts([...products, ...data.value.products]);
+                setProducts(p => ([...p, ...data.value.products]));
                 setLoading(false);
             } catch (error) {
                 setErrors(error.response.message);

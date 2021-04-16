@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Spinner } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import Product from '../components/Product';
 import useProducts from '../customHooks/useProducts';
 import App from '../layouts/App'
 
 export default function Home() {
     const [page, setPage] = useState(1);
-    const { products, setProducts, loading, errors } = useProducts(page);
+    const { products, loading, errors } = useProducts(page);
 
     const handleLoadMore = () => {
         setPage(page + 1);
