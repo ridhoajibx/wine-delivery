@@ -17,9 +17,8 @@ export default function Details() {
         getProduct()
     }, [identifier])
 
-    console.log(identifier);
     return (
-        <App title="Details">
+        <App title={ product.name }>
             <div className="container">
                 <Breadcrumb>
                     <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
