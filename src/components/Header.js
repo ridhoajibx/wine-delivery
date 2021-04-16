@@ -1,16 +1,35 @@
 import React from 'react';
 import { Button, Form, Nav, Navbar } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 
 const Header = () => {
+    let history = useHistory();
+    const goToHome = (e) => {
+        e.stopPropagation()
+        history.push('/');
+    }
+    const back = (e) => {
+        e.stopPropagation()
+        history.goBack();
+    }
+
     return (
         <Navbar bg="dark" expand="md" variant="dark" className="py-2 shadow-sm">
             <div className="container-fluid">
                 <div className="d-flex align-items-center text-white">
                     <div className="nav-icons mr-5 d-none d-md-block">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-list" viewBox="0 0 16 16">
-                            <path fillRule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
-                        </svg>
+                        {history.location.pathname === "/" ?
+                            <button onClick={goToHome} className="btn btn-sm btn-link text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-list" viewBox="0 0 16 16">
+                                    <path fillRule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                                </svg>
+                            </button> :
+                            <button onClick={back} className="btn btn-sm btn-link text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-arrow-left" viewBox="0 0 16 16">
+                                    <path fillRule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+                                </svg>
+                            </button>
+                        }
                     </div>
                     <div className="d-flex align-items-center">
                         {/* brand image */}

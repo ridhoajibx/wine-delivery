@@ -18,7 +18,7 @@ export default function Details() {
     }, [identifier])
 
     return (
-        <App title={ product.name }>
+        <App title={product.name}>
             <div className="container">
                 <Breadcrumb>
                     <Breadcrumb.Item href="/">Home</Breadcrumb.Item>

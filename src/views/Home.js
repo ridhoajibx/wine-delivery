@@ -31,7 +31,7 @@ export default function Home() {
                     {errors && 'errors...'}
 
                     {loading ?
-                        <button onClick={handleLoadMore} className="btn btn-sm btn-cream" disable>
+                        <button onClick={handleLoadMore} className="btn btn-sm btn-cream" disable="true">
                             <Spinner
                                 as="span"
                                 animation="grow"
