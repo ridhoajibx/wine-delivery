@@ -6,7 +6,7 @@ import App from '../layouts/App';
 
 export default function Products() {
     const [page, setPage] = useState(1);
-    const { products, loading, errors } = useProducts(page);
+    const { products, totalPage, loading, errors } = useProducts(page);
 
     const handleLoadMore = () => {
         setPage(page + 1);
