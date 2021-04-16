@@ -35,7 +35,6 @@ export default function Details() {
                         <div className="card border-0 mb-3">
                             <div className="row">
                                 <div className="col-lg-3">
-                                    {/* https://s15.postimg.cc/temvv7u4r/recipe.jpg */}
                                     <div className="card-img-body">
                                         <img src={product.image} className="card-image mx-auto" alt={product.name} />
                                     </div>

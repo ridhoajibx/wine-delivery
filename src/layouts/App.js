@@ -11,7 +11,7 @@ export default function App({ children, title }) {
             </main>
             <div className="bg-light mt-5 py-4 border-top">
                 <div className="container">
-                    Wine Delivery&trade; 1993 - 2021
+                    Wine Delivery&trade; 2021
                 </div>
             </div>
         </div>
