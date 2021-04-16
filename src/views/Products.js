@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Spinner } from 'react-bootstrap';
+import { ToastContainer } from 'react-toastify';
 import ProductList from '../components/ProductList';
 import useProducts from '../customHooks/useProducts';
 import App from '../layouts/App';
@@ -14,6 +15,7 @@ export default function Products() {
 
     return (
         <App>
+            <ToastContainer />
             <div className="container mt-5">
                 <div className="row">
                     {

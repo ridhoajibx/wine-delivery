@@ -1,11 +1,19 @@
+import { createContext, useState } from 'react';
 import RouterIndex from './routes';
-import './App.css'
+import './App.css';
+
+export const ThemeContext = createContext({
+    cartData: [],
+    setCartData: (val) => {},
+})
+
 function App() {
-  return (
-    <div>
-        <RouterIndex />
-    </div>
-  );
+    const [cartData, setCartData] = useState([])
+    return (
+        <ThemeContext.Provider value={{ cartData, setCartData }}>
+            <RouterIndex />
+        </ThemeContext.Provider>
+    );
 }
 
 export default App;
