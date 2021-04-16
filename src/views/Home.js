@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Spinner } from 'react-bootstrap';
-import Product from '../components/Product';
+import ProductList from '../components/ProductList';
 import useProducts from '../customHooks/useProducts';
 import App from '../layouts/App'
 
@@ -19,7 +19,7 @@ export default function Home() {
                     {
                         products && products.map((product, index) => (
                             <div className="col-lg-4" key={index}>
-                                <Product 
+                                <ProductList 
                                     product={product}
                                 />
                             </div>
