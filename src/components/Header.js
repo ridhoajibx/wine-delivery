@@ -45,6 +45,7 @@ const Header = () => {
                         <Button size='sm' type="submit" className="position-absolute t-0 r-0 text-cream text-decoration-none font-sm text-uppercase" variant="link">Search</Button>
                     </Form>
                     <Nav className="ml-auto font-sm">
+                        <NavLink className="nav-link" to="/products">Products</NavLink>
                         <Nav.Link href="#signup">Sign up</Nav.Link>
                         <Nav.Link href="#login">Login</Nav.Link>
                     </Nav>
