@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
 import axios from 'axios';
 import App from '../layouts/App'
+import { Breadcrumb } from 'react-bootstrap';
 
 export default function Details() {
     const { identifier } = useParams();
@@ -19,25 +20,37 @@ export default function Details() {
     console.log(identifier);
     return (
         <App title="Details">
+            <div className="container">
+                <Breadcrumb>
+                    <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+                    <Breadcrumb.Item href="/">
+                        Products
+                    </Breadcrumb.Item>
+                    <Breadcrumb.Item>{product.grapeVarieties}</Breadcrumb.Item>
+                    <Breadcrumb.Item>{product.country}</Breadcrumb.Item>
+                </Breadcrumb>
+            </div>
             <div className="container mt-5">
                 <div className="row">
                     <div className="col-12">
                         <div className="card border-0 mb-3">
-                            <div className="row no-gutters">
-                                <div className="col-3">
+                            <div className="row">
+                                <div className="col-lg-3">
                                     {/* https://s15.postimg.cc/temvv7u4r/recipe.jpg */}
-                                    <img src={product.image} className="card-image" alt={product.name} />
+                                    <div className="card-img-body">
+                                        <img src={product.image} className="card-image mx-auto" alt={product.name} />
+                                    </div>
                                 </div>
-                                <div className="col-9">
+                                <div className="col-lg-9">
                                     <div className="card-body">
-                                        <div style={{ minHeight: '100px' }}>
+                                        <div className="mb-3">
                                             <div className="card-title font-lg text-cream">{product.name}</div>
                                             <div className="card-text text-mute">{product.grapeVarieties} - {!product.vintageYear ? 'Non-Vintages' : product.vintageYear}</div>
                                             <div className="card-text text-mute">{product.country}</div>
                                         </div>
 
-                                        <div className="d-md-flex d-block justify-content-between align-items-center">
-                                            <div className="card-text mb-2">S$ {product.price}</div>
+                                        <div className="d-md-flex d-block justify-content-between align-items-center py-2">
+                                            <div className="card-text">S$ {product.price}</div>
                                             <div className="d-flex align-items-center justify-content-between">
                                                 <button className="btn btn-sm btn-cream px-4 px-lg-4">Add to cart</button>
                                                 <button className="btn btn-sm btn-link text-cream p-0">

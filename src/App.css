@@ -55,15 +55,23 @@
 }
 
 /* Card Style */
+
 .card-title {
     font-size: 20px;
 }
 .card-text {
     font-size: 16px;
 }
-.card-image {
+
+.card-img-body {
+    display: flex;
     width: 100%;
-    height: 100%;
+    margin-bottom: 20px;
+}
+.card-image {
+    max-width: 100%;
+    max-height: 100%;
+    width: 200px;
     object-fit: cover;
     object-position: center;
 }
@@ -76,8 +84,28 @@
     color: white;
     text-transform: uppercase;
 }
+
 .btn-cream:hover {
     background-color: #8a693e;
     border-color: #8a693e;
     color: white;
+}
+
+/* Breadcumb */
+.breadcrumb {
+    background-color: white;
+    margin: 5px 0 5px 0;
+}
+
+.breadcrumb a {
+    color: #9e7540;
+}
+.breadcrumb a:hover {
+    color: #8a693e;
+}
+.breadcrumb-item+.breadcrumb-item::before {
+    float: left;
+    padding-right: .5rem;
+    color: #6c757d;
+    content: ">";
 }
