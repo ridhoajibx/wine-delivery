@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Form, Nav, Navbar } from 'react-bootstrap';
 import { NavLink, useHistory } from 'react-router-dom';
+import Logo from '../../src/logo.png'
 
 const Header = () => {
     let history = useHistory();
@@ -34,7 +35,7 @@ const Header = () => {
                         </div>
                     }
                     <div className="d-flex align-items-center">
-                        {/* brand image */}
+                        <img className="img-logo mr-1" src={Logo} alt="logo"/>
                         <NavLink to="/" className="navbar-brand">WINE.DELIVERY</NavLink>
                     </div>
                 </div>

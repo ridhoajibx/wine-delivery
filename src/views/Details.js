@@ -1,14 +1,37 @@
 import { useParams } from 'react-router'
 import { Breadcrumb } from 'react-bootstrap';
 import useProduct from '../customHooks/useProduct';
-import App from '../layouts/App'
+import App from '../layouts/App';
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Details() {
     const { identifier } = useParams();
-    const { product } = useProduct(identifier)
+    const { product } = useProduct(identifier);
+
+    const addToCart = () => toast.dark('Added to cart!', {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+    });;
+    const markProduct = () => toast.dark('Product is marked!', {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+    });;
 
     return (
         <App title={product.name}>
+            <ToastContainer />
             <div className="container">
                 <Breadcrumb>
                     <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
@@ -40,8 +63,8 @@ export default function Details() {
                                         <div className="d-md-flex d-block justify-content-between align-items-center py-2">
                                             <div className="card-text">S$ {product.price}</div>
                                             <div className="d-flex align-items-center justify-content-between">
-                                                <button className="btn btn-sm btn-cream px-4 px-lg-4">Add to cart</button>
-                                                <button className="btn btn-sm btn-link text-cream p-0">
+                                                <button onClick={addToCart} className="btn btn-sm btn-cream px-4 px-lg-4">Add to cart</button>
+                                                <button onClick={markProduct} className="btn btn-sm btn-link text-cream p-0">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-bookmark" viewBox="0 0 16 16">
                                                         <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z" />
                                                     </svg>
