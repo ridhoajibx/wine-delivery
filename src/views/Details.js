@@ -6,7 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 import { ThemeContext } from '../App';
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 
 export default function Details() {
     const { identifier } = useParams();
@@ -121,7 +121,6 @@ export default function Details() {
         }
     }
 
-    console.log(markData)
     return (
         <App title={product.name}>
             <ToastContainer />
