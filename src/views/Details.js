@@ -93,7 +93,7 @@ export default function Details() {
             const data = { ...findData }
             const findIndex = mark.findIndex(x => x.id === data.id)
             mark.splice(findIndex, 1);
-            await setCartData(mark);
+            await setMarkData(mark)
             await toast(`${findData.name} is unmarked!`, {
                 position: "top-center",
                 autoClose: 3000,
@@ -105,8 +105,7 @@ export default function Details() {
             })
         } else {
             const data = [...markData, {
-                ...item,
-                mark: true
+                ...item
             }]
             await setMarkData(data);
             await toast(`${item.name} is marked!`, {
@@ -120,7 +119,8 @@ export default function Details() {
             });
         }
     }
-
+    console.log(cartData, "cart")
+    console.log(markData, "mark")
     return (
         <App title={product.name}>
             <ToastContainer />
