@@ -14,8 +14,8 @@ const useProduct = (identifier) => {
                 let { data } = await axios.get(`${url}/${identifier}`)
                 setProduct(data.value);
                 setLoading(false);
-            } catch (error) {
-                console.log(error.responses);
+            } catch ({response}) {
+                console.log(response.data.message);
                 setLoading(false);
             }
         }

@@ -6,7 +6,7 @@ import useFunction from '../customHooks/useFunction';
 const ProductList = ({ product }) => {
     const { markData } = useContext(ThemeContext);
     const { addToCart, markProduct } = useFunction();
-    
+
     return (
         <div>
             <div className="card border-0 mb-3" style={{ maxWidth: '540px' }}>

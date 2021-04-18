@@ -17,7 +17,7 @@ function useProducts(page) {
                 setTotalPage(data.value.totalCount);
                 setLoading(false);
             } catch ({ response }) {
-                setErrors(response);
+                setErrors(response.data.message);
                 setLoading(false);
             }
         }
