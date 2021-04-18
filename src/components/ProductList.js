@@ -84,8 +84,10 @@ const ProductList = ({ product }) => {
         if (findData) {
             const data = { ...findData }
             const findIndex = mark.findIndex(x => x.id === data.id)
-            mark.splice(findIndex, 1);
-            setMarkData(mark);
+            setMarkData([
+                ...mark.slice(0, findIndex),
+                ...mark.slice(findIndex + 1, mark.length)
+            ]);
             toast(`${findData.name} is unmarked!`, {
                 position: "top-center",
                 autoClose: 3000,
