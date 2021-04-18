@@ -14,9 +14,9 @@ function useProducts(page) {
             setLoading(true);
             try {
                 const { data } = await axios.get(`${url}/list?page=${page}`)
-                setProducts(p => ([...p, ...data.value.products]));
-                setTotal(data.value.totalCount);
-                setLoading(false);
+                await setProducts(p => ([...p, ...data.value.products]));
+                await setTotal(data.value.totalCount);
+                await setLoading(false);
             } catch ({ response }) {
                 setErrors(response.data.message);
                 setLoading(false);
