@@ -1,118 +1,12 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { toast } from 'react-toastify';
 import { ThemeContext } from '../App';
+import useFunction from '../customHooks/useFunction';
 
 const ProductList = ({ product }) => {
-    const { cartData, setCartData, markData, setMarkData } = useContext(ThemeContext);
-
-    const addToCart = async (item) => {
-        const cart = cartData;
-        const findData = cart.find(x => x.id === item.id);
-
-        if (item.qty === 0) {
-            toast.error(`${item.name} has sold out!`, {
-                position: "top-center",
-                autoClose: 3000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            })
-        } else {
-            try {
-                if (findData) {
-                    if (findData.qty <= findData.total) {
-                        await toast.error(`${findData.name} has sold out!`, {
-                            position: "top-center",
-                            autoClose: 3000,
-                            hideProgressBar: false,
-                            closeOnClick: true,
-                            pauseOnHover: true,
-                            draggable: true,
-                            progress: undefined,
-                        })
-                    } else {
-                        const data = { ...findData, total: findData.total + 1 }
-                        const findIndex = cart.findIndex(x => x.id === data.id)
-                        cart.splice(findIndex, 1, data);
-                        await setCartData(cart);
-                        await toast(`${findData.name} is added to cart!`, {
-                            position: "top-center",
-                            autoClose: 3000,
-                            hideProgressBar: false,
-                            closeOnClick: true,
-                            pauseOnHover: true,
-                            draggable: true,
-                            progress: undefined,
-                        })
-                    }
-                } else {
-                    const data = [...cartData, {
-                        ...item,
-                        total: 1
-                    }]
-                    await setCartData(data);
-                    await toast(`${item.name} is added to cart!`, {
-                        position: "top-center",
-                        autoClose: 3000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                    });
-                }
-            } catch (error) {
-                toast.error(`added ${item.name} failed!`, {
-                    position: "top-center",
-                    autoClose: 3000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                })
-            }
-        }
-    }
-
-    const markProduct = (item) => {
-        const mark = markData;
-        const findData = mark.find(x => x.id === item.id);
-        if (findData) {
-            const data = { ...findData }
-            const findIndex = mark.findIndex(x => x.id === data.id)
-            setMarkData([
-                ...mark.slice(0, findIndex),
-                ...mark.slice(findIndex + 1, mark.length)
-            ]);
-            toast(`${findData.name} is unmarked!`, {
-                position: "top-center",
-                autoClose: 3000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            })
-        } else {
-            const data = [...markData, {
-                ...item
-            }]
-            setMarkData(data);
-            toast(`${item.name} is marked!`, {
-                position: "top-center",
-                autoClose: 3000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            });
-        }
-    }
+    const { markData } = useContext(ThemeContext);
+    const { addToCart, markProduct } = useFunction();
+    
     return (
         <div>
             <div className="card border-0 mb-3" style={{ maxWidth: '540px' }}>
