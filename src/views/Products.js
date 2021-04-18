@@ -37,10 +37,10 @@ export default function Products() {
                     }
                 </div>
                 
-                <div className="row my-4 justify-content-center">
+                <div className="row my-4 justify-content-center align-items-center">
 
                     {loading &&
-                        <div>
+                        <div className="mx-auto my-auto">
                             <Spinner as="span" animation="grow" size="sm" role="status" aria-hidden="true" />
                             <Spinner className="mx-2" as="span" animation="grow" size="sm" role="status" aria-hidden="true" />
                             <Spinner as="span" animation="grow" size="sm" role="status" aria-hidden="true" />

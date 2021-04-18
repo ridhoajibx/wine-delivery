@@ -87,7 +87,7 @@ const useFunction = () => {
                 ...mark.slice(0, findIndex),
                 ...mark.slice(findIndex + 1, mark.length)
             ]);
-            await toast(`${findData.name} is unmarked!`, {
+            await toast(`${findData.name} remove from wish list!`, {
                 position: "top-center",
                 autoClose: 3000,
                 hideProgressBar: false,
@@ -101,7 +101,7 @@ const useFunction = () => {
                 ...item
             }]
             await setMarkData(data);
-            await toast(`${item.name} is marked!`, {
+            await toast(`${item.name} is added to wish list!`, {
                 position: "top-center",
                 autoClose: 3000,
                 hideProgressBar: false,
