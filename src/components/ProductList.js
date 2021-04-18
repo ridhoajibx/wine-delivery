@@ -113,7 +113,6 @@ const ProductList = ({ product }) => {
             });
         }
     }
-    console.log(markData)
     return (
         <div>
             <div className="card border-0 mb-3" style={{ maxWidth: '540px' }}>

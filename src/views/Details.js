@@ -121,8 +121,6 @@ export default function Details() {
             });
         }
     }
-    console.log(cartData, "cart")
-    console.log(markData, "mark")
     return (
         <App title={product.name}>
             <ToastContainer />
