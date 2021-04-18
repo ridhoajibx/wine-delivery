@@ -76,7 +76,7 @@ export default function Carts() {
                                                 </tr>
                                             )) :
                                             <tr>
-                                                <td colspan="4">You don't any products in your cart, go to <Link className="btn btn-sm btn-cream" to="/products">Products</Link> Page</td>
+                                                <td colSpan="4">You don't any products in your cart, go to <Link className="btn btn-sm btn-cream" to="/products">Products</Link> Page</td>
                                             </tr>
                                         }
                                     </tbody>
