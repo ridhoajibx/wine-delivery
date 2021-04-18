@@ -16,10 +16,8 @@ export default function Products() {
     }
 
     useEffect(() => {
-        if (products.length !== total) {
-            if (scrollPosition === document.body.offsetHeight - window.innerHeight) {
-                setPage(page + 1)
-            }
+        if (scrollPosition === document.body.offsetHeight - window.innerHeight) {
+            setPage(page + 1)
         }
     }, [scrollPosition, page])
 
