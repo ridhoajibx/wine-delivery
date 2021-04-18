@@ -5,16 +5,17 @@ const url = process.env.REACT_APP_WINE_URL
 
 function useProducts(page) {
     const [products, setProducts] = useState([]);
-    const [totalPage, setTotalPage] = useState(0)
+    const [total, setTotal] = useState(0)
     const [errors, setErrors] = useState('');
     const [loading, setLoading] = useState(false);
+
     useEffect(() => {
         const getProductList = async () => {
             setLoading(true);
             try {
                 const { data } = await axios.get(`${url}/list?page=${page}`)
                 setProducts(p => ([...p, ...data.value.products]));
-                setTotalPage(data.value.totalCount);
+                setTotal(data.value.totalCount);
                 setLoading(false);
             } catch ({ response }) {
                 setErrors(response.data.message);
@@ -23,7 +24,7 @@ function useProducts(page) {
         }
         getProductList()
     }, [page]);
-    return { products, setProducts, totalPage, errors, loading }
+    return { products, setProducts, total, errors, loading }
 }
 
 export default useProducts;

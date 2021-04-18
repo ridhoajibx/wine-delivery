@@ -52,7 +52,7 @@ export default function Details() {
                                             </div>
 
                                             <div className="d-md-flex d-block justify-content-between align-items-center py-2">
-                                                <div className="card-text">S$ {product.price}</div>
+                                                <div className="card-text">$ {product.price}</div>
                                                 <div className="d-flex align-items-center justify-content-between">
                                                     <button onClick={() => addToCart(product)} className="btn btn-sm btn-cream px-4 px-lg-4">Add to cart</button>
                                                     <button onClick={() => markProduct(product)} className="btn btn-sm btn-link text-cream p-0">

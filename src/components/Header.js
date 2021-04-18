@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Button, Form, Nav, Navbar } from 'react-bootstrap';
+import { Form, Nav, Navbar } from 'react-bootstrap';
 import { NavLink, useHistory } from 'react-router-dom';
 import Logo from '../../src/logo.png';
 import { ThemeContext } from '../App'
@@ -42,13 +42,14 @@ const Header = () => {
                         <NavLink to="/" className="navbar-brand">WINE.DELIVERY</NavLink>
                     </div>
                 </div>
+
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Form className="mx-auto my-1 position-relative">
-                        <Form.Control className="form-search text-dark" placeholder="Search in Wine.Delivery" size="sm" type="text" />
-                        <Button size='sm' type="submit" className="position-absolute t-0 r-0 text-cream text-decoration-none font-sm text-uppercase" variant="link">Search</Button>
+                    <Form className="mx-auto my-1">
+                        <Form.Control className="form-search text-dark position-relative" placeholder="Search in Wine.Delivery" size="sm" type="text" />
+                        {/* <Button size='sm' type="submit" className="position-absolute t-0 r-0 text-cream text-decoration-none font-sm text-uppercase" variant="link">Search</Button> */}
                     </Form>
-                    <Nav className="ml-auto font-sm">
+                    <Nav className="font-sm">
                         <NavLink className="nav-link" to="/products">Products</NavLink>
                         <Nav.Link href="#signup">Sign up</Nav.Link>
                         <Nav.Link href="#login">Login</Nav.Link>

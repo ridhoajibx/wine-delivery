@@ -21,7 +21,7 @@ const ProductList = ({ product }) => {
                                 <div className="card-text">{product.grapeVarietes}</div>
                                 <div className="card-text">{product.country}</div>
                             </div>
-                            <div className="card-text mb-2">S$ {product.price}</div>
+                            <div className="card-text mb-2">$ {product.price}</div>
                             <div className="d-flex justify-content-between align-items-center">
                                 <button onClick={() => addToCart(product)} className="btn btn-sm btn-cream px-4 px-lg-4">Add to cart</button>
                                 <button onClick={() => markProduct(product)} className="btn btn-sm btn-link text-cream p-0">
