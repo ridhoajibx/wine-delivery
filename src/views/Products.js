@@ -21,7 +21,6 @@ export default function Products() {
         }
     }, [scrollPosition])
 
-    console.log(products.length, total);
     return (
         <App>
             <ToastContainer />
