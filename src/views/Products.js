@@ -55,8 +55,6 @@ export default function Products() {
                                 <strong>Yay! You have seen it all</strong>
                             </span>
                     }
-
-
                 </div>
             </div>
         </App>

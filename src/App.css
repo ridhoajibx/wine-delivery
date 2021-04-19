@@ -56,11 +56,11 @@
 }
 
 
-/* @media screen and (min-width: 1000px) {
+@media screen and (min-width: 1200px) {
     .form-search {
-        width: 220%;
+        width: 400px;
     }
-} */
+}
 
 /* Card Style */
 
