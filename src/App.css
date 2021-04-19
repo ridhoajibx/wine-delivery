@@ -47,24 +47,18 @@
     background-color: #9e7540 !important;
 }
 
-/* .t-0 {
+.t-0 {
     top: 0 !important;
-}
-
-.l-0 {
-    left: 0 !important;
 }
 
 .r-0 {
     right: 0 !important;
 }
 
-@media screen and (min-width: 1000px) {
+
+/* @media screen and (min-width: 1000px) {
     .form-search {
         width: 220%;
-    }
-    .r-0 {
-        right: -260px !important;
     }
 } */
 

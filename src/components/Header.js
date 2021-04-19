@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Form, Nav, Navbar } from 'react-bootstrap';
+import { Form, Nav, Navbar, Button } from 'react-bootstrap';
 import { NavLink, useHistory } from 'react-router-dom';
 import Logo from '../../src/logo.png';
 import { ThemeContext } from '../App'
@@ -22,14 +22,14 @@ const Header = () => {
             <div className="container-fluid">
                 <div className="d-flex align-items-center text-white">
                     {history.location.pathname === "/" ?
-                        <div className="nav-icons mr-5 d-none d-md-block">
+                        <div className="nav-icons mr-2 d-none d-md-block">
                             <button onClick={goToHome} className="btn btn-sm btn-link text-white">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-list" viewBox="0 0 16 16">
                                     <path fillRule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
                                 </svg>
                             </button>
                         </div> :
-                        <div className="nav-icons mr-5">
+                        <div className="nav-icons mr-2">
                             <button onClick={back} className="btn btn-sm btn-icons">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-arrow-left" viewBox="0 0 16 16">
                                     <path fillRule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
@@ -45,9 +45,9 @@ const Header = () => {
 
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Form className="mx-auto my-1">
-                        <Form.Control className="form-search text-dark position-relative" placeholder="Search in Wine.Delivery" size="sm" type="text" />
-                        {/* <Button size='sm' type="submit" className="position-absolute t-0 r-0 text-cream text-decoration-none font-sm text-uppercase" variant="link">Search</Button> */}
+                    <Form className=" mx-auto my-1 position-relative">
+                        <Form.Control className="form-search text-dark" placeholder="Search" size="sm" type="text" />
+                        <Button size='sm' type="submit" className="position-absolute t-0 r-0 text-cream text-decoration-none font-sm text-uppercase" variant="link">Search</Button>
                     </Form>
                     <Nav className="font-sm">
                         <NavLink className="nav-link" to="/products">Products</NavLink>
