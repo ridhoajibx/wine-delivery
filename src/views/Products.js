@@ -17,10 +17,11 @@ export default function Products() {
 
     useEffect(() => {
         if (scrollPosition === document.body.offsetHeight - window.innerHeight) {
-            setPage(page + 1)
+            setPage(p => p + 1)
         }
-    }, [scrollPosition, page])
+    }, [scrollPosition])
 
+    console.log(products.length, total);
     return (
         <App>
             <ToastContainer />
