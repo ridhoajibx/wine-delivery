@@ -21,7 +21,7 @@ const Header = () => {
         <Navbar bg="dark" expand="md" variant="dark" className="py-2 shadow-sm">
             <div className="container-fluid">
                 <div className="d-flex align-items-center text-white">
-                    {history.location.pathname === "/" ?
+                    {history.location.pathname === "/products" ?
                         <div className="nav-icons mr-2 d-none d-md-block">
                             <button onClick={goToHome} className="btn btn-sm btn-link text-white">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-list" viewBox="0 0 16 16">
