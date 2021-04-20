@@ -16,7 +16,7 @@ export default function index() {
                 <Route exact path="/products" component={Products} />
                 <Route exact path="/products/:identifier" component={Details} />
                 <Route exact path="/your-cart" component={Carts} />
-                <Route exact exact path="*" render={() => {
+                <Route exact path="*" render={() => {
                     return (
                         <NotFound />
                     )

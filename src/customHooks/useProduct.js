@@ -1,9 +1,11 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { useHistory } from 'react-router';
 
 const url = process.env.REACT_APP_WINE_URL
 
 const useProduct = (identifier) => {
+    let history = useHistory();
     const [product, setProduct] = useState([])
     const [loading, setLoading] = useState(false)
 
@@ -17,10 +19,11 @@ const useProduct = (identifier) => {
             } catch ({response}) {
                 console.log(response.data.message);
                 setLoading(false);
+                history.push('/');
             }
         }
         getProduct();
-    }, [identifier]);
+    }, [identifier, history]);
 
     return { product, setProduct, loading };
 }
